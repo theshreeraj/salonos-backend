@@ -3,8 +3,8 @@
 //   customers — app users, token in "X-Customer-Token: <jwt>"
 // A browser can hold both (a salon owner booking their own haircut), so they travel in separate headers.
 import jwt from 'jsonwebtoken'
-import { config } from '../config.js'
-import { forbidden, unauthorized } from '../lib/http.js'
+import { config } from '../config/env.js'
+import { forbidden, unauthorized } from '../utils/http.js'
 import { Customer, StaffUser } from '../models/index.js'
 
 const TOKEN_TTL = { staff: '12h', customer: '30d' }

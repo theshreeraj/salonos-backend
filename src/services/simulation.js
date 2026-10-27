@@ -3,15 +3,11 @@
 import { isOpenNow, isoDate } from '../../../shared/format.js'
 import { makeRequest, queueKey } from '../../../shared/queue.js'
 import { Booking, Queue, Salon } from '../models/index.js'
+import { expireRequests } from './bookings.js'
 import { ensureQueue, plain } from './queue.js'
 
 const TICK_MS = 10_000
 const MAX_PENDING = 2
-
-// Requests the salon didn't answer in time are refunded; runs whether or not the simulation is on
-export async function expireRequests(now = Date.now()) {
-  await Booking.updateMany({ status: 'requested', respondBy: { $lt: now } }, { $set: { status: 'expired', refunded: true } })
-}
 
 async function tick() {
   const now = Date.now()

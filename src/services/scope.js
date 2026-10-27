@@ -1,5 +1,5 @@
 // What each portal role may see and change
-import { forbidden, notFound } from '../lib/http.js'
+import { forbidden, notFound } from '../utils/http.js'
 import { Salon, StaffUser } from '../models/index.js'
 
 // Mongo filter for salons in the staff member's scope

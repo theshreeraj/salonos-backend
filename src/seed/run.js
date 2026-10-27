@@ -1,7 +1,7 @@
 // npm run seed — wipes the database and loads fresh demo data
-import '../config.js'
+import '../config/env.js'
 import mongoose from 'mongoose'
-import { connectDb } from '../db.js'
+import { connectDb } from '../config/database.js'
 import { seedDatabase } from './index.js'
 
 await connectDb()
