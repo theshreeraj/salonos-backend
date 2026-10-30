@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import { identify } from '../middleware/auth.js'
 import bookings from './bookings.js'
 import catalog from './catalog.js'
+import config from './config.js'
 import customers from './customers.js'
 import desk from './desk.js'
 import leads from './leads.js'
@@ -15,6 +16,6 @@ const api = Router()
 
 api.get('/health', (_req, res) => res.json({ ok: true, db: mongoose.connection.readyState === 1, name: mongoose.connection.name }))
 api.use(identify)
-for (const routes of [catalog, customers, bookings, salonOps, portal, onboardings, leads, desk]) api.use(routes)
+for (const routes of [config, catalog, customers, bookings, salonOps, portal, onboardings, leads, desk]) api.use(routes)
 
 export default api

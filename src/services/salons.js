@@ -1,6 +1,7 @@
 // Approving an onboarding application puts the salon live in the customer app
-import { PHOTOS, withServices } from '../../../shared/catalog.js'
-import { isoDate } from '../../../shared/format.js'
+import { PHOTOS } from '../config/catalog.js'
+import { isoDate } from '../utils/dates.js'
+import { withServices } from '../utils/catalog.js'
 import { Salon } from '../models/index.js'
 
 const PHOTO_SETS = {

@@ -1,6 +1,6 @@
 // Catalogue, availability and the live feed every screen polls
-import { BOOKING_DAYS, RELEASED } from '../../../shared/availability.js'
-import { addDays, isoDate } from '../../../shared/format.js'
+import { BOOKING_DAYS, RELEASED } from '../config/catalog.js'
+import { addDays, isoDate } from '../utils/dates.js'
 import { Booking, Queue, Salon } from '../models/index.js'
 import { loadCalendars } from '../services/availability.js'
 import { scopedSalonIds } from '../services/scope.js'

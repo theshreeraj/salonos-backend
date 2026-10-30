@@ -1,7 +1,7 @@
 // Salon onboarding: agents submit, district managers review, approval puts the salon live
-import { CATEGORIES, FACILITIES } from '../../../shared/catalog.js'
-import { isoDate } from '../../../shared/format.js'
-import { historyOf } from '../../../shared/leads.js'
+import { CATEGORIES, FACILITIES } from '../config/catalog.js'
+import { historyOf } from '../utils/leads.js'
+import { isoDate } from '../utils/dates.js'
 import { badRequest, conflict, forbidden, notFound, uid } from '../utils/http.js'
 import { Lead, Onboarding } from '../models/index.js'
 import { createSalonFromOnboarding } from '../services/salons.js'

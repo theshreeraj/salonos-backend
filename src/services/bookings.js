@@ -3,10 +3,10 @@
 //   salon declines, misses the 5-minute window, or the customer turns down a new time → refunded
 //   customer cancels ≥ CANCEL_REFUND_HOURS before the start → refunded; later, or a no-show → fee kept
 //   salon cancels → refunded; the slot went to someone else while the customer was paying → refunded
-import { ANY_STYLIST, BOOKING_DAYS, DEFAULT_MINS, HOLD_MINS, durationOf, pickStylist } from '../../../shared/availability.js'
-import { BOOKING_FEE, RESPOND_WINDOW_MS } from '../../../shared/catalog.js'
-import { addDays, isoDate } from '../../../shared/format.js'
-import { refundsOnCancel } from '../../../shared/queue.js'
+import { ANY_STYLIST, BOOKING_DAYS, BOOKING_FEE, DEFAULT_MINS, HOLD_MINS, RESPOND_WINDOW_MS } from '../config/catalog.js'
+import { addDays, isoDate } from '../utils/dates.js'
+import { durationOf, pickStylist } from '../utils/availability.js'
+import { refundsOnCancel } from '../utils/queue.js'
 import { Booking, Salon, SlotHold } from '../models/index.js'
 import { badRequest, conflict, notFound, uid } from '../utils/http.js'
 import { loadCalendar } from './availability.js'

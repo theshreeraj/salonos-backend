@@ -1,7 +1,8 @@
 // Front desk rules that touch more than one record: booking a stylist and chair, and checking out a bill
-import { isChairFree, isFree } from '../../../shared/availability.js'
-import { WEEKDAYS, freeChair, isBookable, isOffDay, isOnLeave, lineTotal, toMins } from '../../../shared/desk.js'
-import { isoDate } from '../../../shared/format.js'
+import { WEEKDAYS } from '../config/catalog.js'
+import { freeChair, isBookable, isOffDay, isOnLeave, lineTotal } from '../utils/desk.js'
+import { isChairFree, isFree } from '../utils/availability.js'
+import { isoDate, toMins } from '../utils/dates.js'
 import { Appointment, Client, Counter, DeskService, DeskStaff, Invoice, Leave, PendingBill, Product, Salon } from '../models/index.js'
 import { badRequest, conflict, notFound, pick, requireFields, uid } from '../utils/http.js'
 import { loadCalendar } from './availability.js'

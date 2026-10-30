@@ -1,9 +1,10 @@
 // Demo back-office history for a salon: team, catalogue, clients, bookings, sales, attendance, leave and expenses.
 // Seeded from the salon id so every reseed tells the same story.
-import { getCategory } from '../../../shared/catalog.js'
-import { STAFF_COLORS, atMins, freeChair, isOffDay, isOnLeave, lineTotal, nowMins, toHHMM, toMins } from '../../../shared/desk.js'
-import { addDays, isoDate } from '../../../shared/format.js'
-import { hash } from '../../../shared/queue.js'
+import { STAFF_COLORS } from '../config/catalog.js'
+import { addDays, atMins, isoDate, nowMins, toHHMM, toMins } from '../utils/dates.js'
+import { freeChair, isOffDay, isOnLeave, lineTotal } from '../utils/desk.js'
+import { getCategory } from '../utils/catalog.js'
+import { hash } from '../utils/queue.js'
 
 const CLIENT_NAMES = [
   'Aditya Verma',

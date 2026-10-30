@@ -1,7 +1,7 @@
 // Keeps demo salons alive: walk-ins arrive, tokens get served, self-managed salons receive booking requests,
 // and requests nobody answered expire with a refund. Disable with SIMULATE=false once real salons drive the queues.
-import { isOpenNow, isoDate } from '../../../shared/format.js'
-import { makeRequest, queueKey } from '../../../shared/queue.js'
+import { isOpenNow, isoDate } from '../utils/dates.js'
+import { makeRequest, queueKey } from '../utils/queue.js'
 import { Booking, Queue, Salon } from '../models/index.js'
 import { expireRequests } from './bookings.js'
 import { ensureQueue, plain } from './queue.js'

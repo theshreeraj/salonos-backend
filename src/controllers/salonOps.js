@@ -1,5 +1,5 @@
 // Running a salon's day: the live queue, walk-ins and the online-booking switch
-import { isoDate } from '../../../shared/format.js'
+import { isoDate } from '../utils/dates.js'
 import { badRequest, conflict, notFound } from '../utils/http.js'
 import { Queue, Salon } from '../models/index.js'
 import { markBookingNoShow } from '../services/bookings.js'

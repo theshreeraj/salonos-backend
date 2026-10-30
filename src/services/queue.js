@@ -1,5 +1,5 @@
 // Daily queue documents: created on first use, tokens handed out with an atomic counter
-import { defaultQueue, queueKey } from '../../../shared/queue.js'
+import { defaultQueue, queueKey } from '../utils/queue.js'
 import { Queue } from '../models/index.js'
 
 export const plain = (doc) => (doc?.toJSON ? doc.toJSON() : doc)

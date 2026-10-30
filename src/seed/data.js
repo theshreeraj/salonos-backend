@@ -1,9 +1,21 @@
 // Demo data loaded into an empty database: the Pune salons, portal users, applications and leads.
 // Dates are relative to the day the seed runs.
-import { PHOTOS } from '../../../shared/catalog.js'
-import { addDays, isoDate } from '../../../shared/format.js'
+import { PHOTOS } from '../config/catalog.js'
+import { addDays, isoDate } from '../utils/dates.js'
 
 export const DEMO_PASSWORD = 'demo1234'
+
+// Sign-ins listed on the portal login page outside production (GET /api/config), per role
+export const DEMO_ACCOUNTS = {
+  frontdesk: [{ email: 'frontdesk@salonos.app', note: 'Mirror & Mane · has a receptionist' }],
+  stylist: [
+    { email: 'barber@salonos.app', note: "Mehboob Men's Parlour · no receptionist" },
+    { email: 'stylist@salonos.app', note: 'Mirror & Mane · front desk handles bookings' },
+  ],
+  agent: [{ email: 'agent@salonos.app', note: 'Pune West' }],
+  manager: [{ email: 'manager@salonos.app', note: 'Pune West' }],
+  admin: [{ email: 'admin@salonos.app', note: 'All districts' }],
+}
 
 export const RAW_SALONS = [
   {

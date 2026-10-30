@@ -1,9 +1,9 @@
 // Loads the demo dataset. Runs automatically on an empty database, or on demand with `npm run seed`.
+import { historyOf } from '../utils/leads.js'
+import { makeRequest } from '../utils/queue.js'
+import { withServices } from '../utils/catalog.js'
 import bcrypt from 'bcryptjs'
 import mongoose from 'mongoose'
-import { withServices } from '../../../shared/catalog.js'
-import { historyOf } from '../../../shared/leads.js'
-import { makeRequest } from '../../../shared/queue.js'
 import { Booking, DESK_MODELS, Lead, Onboarding, Salon, StaffUser } from '../models/index.js'
 import { RAW_SALONS, SALON_META, SEED_USERS, seedLeads, seedOnboardings } from './data.js'
 import { createSalonFromOnboarding } from '../services/salons.js'

@@ -1,7 +1,8 @@
-// Loads the records behind each day's calendar and hands them to shared/availability.js, which decides what's free.
+// Loads the records behind each day's calendar and hands them to utils/availability.js, which decides what's free.
 // The same calendar answers the customer app (GET /salons/:id/availability), app bookings, and the front desk.
-import { BOOKING_DAYS, RELEASED, dayCalendar } from '../../../shared/availability.js'
-import { addDays } from '../../../shared/format.js'
+import { BOOKING_DAYS, RELEASED } from '../config/catalog.js'
+import { addDays } from '../utils/dates.js'
+import { dayCalendar } from '../utils/availability.js'
 import { Appointment, Booking, DeskStaff, Leave, SlotHold } from '../models/index.js'
 import { plain } from './queue.js'
 

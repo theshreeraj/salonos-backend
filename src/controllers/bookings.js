@@ -1,5 +1,5 @@
 // Customer bookings and the salon's answers to them. Rules live in services/bookings.js.
-import { DECLINE_REASONS } from '../../../shared/catalog.js'
+import { DECLINE_REASONS } from '../config/catalog.js'
 import { Booking, Salon } from '../models/index.js'
 import * as bookings from '../services/bookings.js'
 import { canRunSalon } from '../services/scope.js'

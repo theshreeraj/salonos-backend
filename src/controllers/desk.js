@@ -1,5 +1,5 @@
 // The front desk's back office for its own salon: clients, appointments, checkout, team, catalogue, stock and people ops
-import { isoDate } from '../../../shared/format.js'
+import { isoDate } from '../utils/dates.js'
 import { Appointment, Attendance, Client, DESK_MODELS, DeskStaff, Expense, Leave, PendingBill } from '../models/index.js'
 import * as desk from '../services/desk.js'
 import { badRequest, conflict, notFound, pick, requireFields, uid } from '../utils/http.js'

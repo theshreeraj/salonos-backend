@@ -1,6 +1,7 @@
 // Field agents' pipeline of salons not yet onboarded
-import { isoDate } from '../../../shared/format.js'
-import { CONTACT_KINDS, LEAD_SOURCES, OUTCOMES, stageAfter } from '../../../shared/leads.js'
+import { CONTACT_KINDS, LEAD_SOURCES, OUTCOMES } from '../config/catalog.js'
+import { isoDate } from '../utils/dates.js'
+import { stageAfter } from '../utils/leads.js'
 import { badRequest, notFound, uid } from '../utils/http.js'
 import { Lead } from '../models/index.js'
 import { scopedAgentIds } from '../services/scope.js'
@@ -65,7 +66,7 @@ export async function addActivity(req, res) {
   const lead = await ownLead(req)
   const { kind, note = '', nextFollowUp = null } = req.body
   const outcome = req.body.outcome ?? null
-  if (!CONTACT_KINDS[kind] || kind === 'onboarding') throw badRequest('Choose call, WhatsApp, visit or note.')
+  if (!CONTACT_KINDS.includes(kind) || kind === 'onboarding') throw badRequest('Choose call, WhatsApp, visit or note.')
   if (outcome && !OUTCOMES[outcome]) throw badRequest('Unknown outcome.')
   if (kind !== 'note' && !outcome) throw badRequest('Pick what happened.')
   if (kind === 'note' && !String(note).trim()) throw badRequest('Write the note.')
